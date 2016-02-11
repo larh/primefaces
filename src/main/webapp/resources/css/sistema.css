@@ -1,0 +1,25 @@
+body {
+	font-size: 70%;
+	background-color: #424548;
+}
+
+.menu { 
+    border: none;
+}
+
+.menubar { 
+    border: none;
+    overflow: visible;
+    position: static;
+}
+
+.ui-layout-unit-content ui-widget-content {
+	
+}
+
+/* .ui-grid .ui-grid-row div { */
+/* 	background-color: #cccccc; */
+/* 	text-align: center; */
+/* 	border: 1px solid #dddddd; */
+/* 	padding: 10px 0px; */
+/* } */

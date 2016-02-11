@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title><ui:insert name="titulo">Venta de Pasajes</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css" />
+</h:head>
+<h:body>
+<h:form>
+<p:layout fullPage="true">
+ 
+    <p:layoutUnit position="north" style="overflow: visible;position: static; z-index: '1'">
+<!--     	<h:form styleClass="menubar"> -->
+	        <p:menubar styleClass="menubar">
+		        <p:submenu label="File" icon="ui-icon-document">
+		            <p:submenu label="New" icon="ui-icon-contact">
+		                <p:menuitem value="Project" url="#" />
+		                <p:menuitem value="Other" url="#" />
+		            </p:submenu>
+		            <p:menuitem value="Open" url="#" />
+		            <p:separator />
+		            <p:menuitem value="Quit" url="#" />
+		        </p:submenu>
+		 
+		        <p:submenu label="Edit" icon="ui-icon-pencil">
+		            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+		            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+		        </p:submenu>
+		 
+		        <p:submenu label="Help" icon="ui-icon-help">
+		            <p:menuitem value="Contents" url="#" />
+		            <p:submenu label="Search" icon="ui-icon-search">
+		                <p:submenu label="Text">
+		                    <p:menuitem value="Workspace" url="#" />
+		                </p:submenu>
+		                <p:menuitem value="File" url="#" />
+		            </p:submenu>
+		        </p:submenu>
+		 
+		        <p:submenu label="Actions" icon="ui-icon-gear">
+		            <p:submenu label="Ajax" icon="ui-icon-refresh">
+		                <p:menuitem value="Save" icon="ui-icon-disk"/>
+		                <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w"/>
+		            </p:submenu>
+		            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">
+		                <p:menuitem value="Delete" icon="ui-icon-close" ajax="false"/>
+		            </p:submenu>
+		        </p:submenu>
+		 
+		        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />
+		 
+		        <f:facet name="options">
+		            <p:inputText style="margin-right:10px" placeholder="Search"/>
+		            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+		        </f:facet>
+		    </p:menubar>
+<!--     	</h:form> -->
+    </p:layoutUnit>
+ 
+<!--     <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true"> -->
+<!--         <h:outputText value="South unit content." /> -->
+<!--     </p:layoutUnit> -->
+ 
+    <p:layoutUnit position="west" header="Left" resizable="true" closable="true" collapsible="true">
+<!--     	<h:form styleClass="menu"> -->
+	        <p:menu toggleable="true" styleClass="menu">
+		        <p:submenu label="Ajax">
+		            <p:menuitem value="Save" icon="ui-icon-disk" />
+		            <p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w"/>
+		        </p:submenu>
+		        <p:submenu label="Non-Ajax">
+		            <p:menuitem value="Delete" ajax="false" icon="ui-icon-close"/>
+		        </p:submenu>
+		        <p:submenu label="Navigations">
+		            <p:menuitem value="External" url="http://www.primefaces.org" icon="ui-icon-home"/>
+		            <p:menuitem value="Internal" icon="ui-icon-star"/>
+		        </p:submenu>
+		    </p:menu>
+<!-- 	    </h:form> -->
+    </p:layoutUnit>
+ 
+<!--     <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop"> -->
+<!--         <h:outputText value="Right unit content." /> -->
+<!--     </p:layoutUnit> -->
+ 
+    <p:layoutUnit position="center">
+        <p:tabView scrollable="true">
+	        <p:tab title="Tab 1">
+	        	<p:dataTable value="#{viewEmployeesManagedBean.employees}" var="employee" paginator="true" rows="10" rowsPerPageTemplate="10,20,30">
+				    <p:column>
+				        <f:facet name="header">
+				            <h:outputText value="Employee ID"></h:outputText>
+				        </f:facet>
+				        <h:outputText value="#{employee.employeeId}"></h:outputText>
+				    </p:column>
+				    <p:column>
+				        <f:facet name="header">
+				            <h:outputText value="Employee Name"></h:outputText>
+				        </f:facet>
+				        <h:outputText value="#{employee.employeeName}"></h:outputText>
+				    </p:column>
+				</p:dataTable>
+	        </p:tab>
+	        <p:tab title="Tab 2">Tab 2 Content</p:tab>
+	        <p:tab title="Tab 3">Tab 3 Content</p:tab>
+	        <p:tab title="Tab 4">Tab 4 Content</p:tab>
+	        <p:tab title="Tab 5">Tab 5 Content</p:tab>
+	        <p:tab title="Tab 6">Tab 6 Content</p:tab>
+	        <p:tab title="Tab 7">Tab 7 Content</p:tab>
+	    </p:tabView>
+    </p:layoutUnit>
+ 
+</p:layout>
+</h:form>
+</h:body>
+</html>
